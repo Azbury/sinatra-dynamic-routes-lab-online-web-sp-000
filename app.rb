@@ -11,4 +11,14 @@ class App < Sinatra::Base
     @num = params[:number].to_i
     "#{@num**2}"
   end
+
+  get '/say/:number/:phrase' do
+    counter = 0
+    @num = params[:number].to_i
+    @words = params[:phrase]
+    while counter < @num
+      "#{@words}"
+      counter += 1
+    end
+  end
 end
