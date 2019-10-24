@@ -16,9 +16,11 @@ class App < Sinatra::Base
     counter = 0
     @num = params[:number].to_i
     @words = params[:phrase]
+    @complete_phrase = ""
     while counter < @num
-      "#{@words}"
+      @complete_phrase = @complete_phrase + @words
       counter += 1
     end
+    "#{@complete_phrase}"
   end
 end
